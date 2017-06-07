@@ -45,20 +45,6 @@
         -webkit-align-items: center;
         align-items: center;
     }
-    .swiper-pagination-bullet {
-        width: 20px;
-        height: 20px;
-        text-align: center;
-        line-height: 20px;
-        font-size: 12px;
-        color:#000;
-        opacity: 1;
-        background: rgba(0,0,0,0.2);
-    }
-    .swiper-pagination-bullet-active {
-        color:#fff;
-        background: #007aff;
-    }
     </style>
 </head>
 <body>
@@ -78,19 +64,24 @@
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
 
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
     <!-- Swiper JS -->
-    <script src="../dist/js/swiper.min.js"></script>
+    <script src="../dist/js/swiper.jquery.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
     var swiper = new Swiper('.swiper-container', {
+        loop: true,
         pagination: '.swiper-pagination',
         paginationClickable: true,
-        paginationBulletRender: function (swiper, index, className) {
-            return '<span class="' + className + '">' + (index + 1) + '</span>';
-        }
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev'
     });
     </script>
 </body>
